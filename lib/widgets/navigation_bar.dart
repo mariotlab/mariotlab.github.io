@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class MariOTNavigationBar extends StatelessWidget {
-  const MariOTNavigationBar({super.key});
+  final String currentPage;
+
+  const MariOTNavigationBar({
+    super.key,
+    required this.currentPage,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,36 +28,44 @@ class MariOTNavigationBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            _buildNavItem('MariOT', true),
-            _buildNavItem('Projects', false),
-            _buildNavItem('Publications', false),
-            _buildNavItem('MariOT Forum', false),
-            _buildNavItem('Maritime Matrix', false),
-            _buildNavItem('Datasets', false),
-            _buildNavItem('News', false),
-            _buildNavItem('Booking', false),
-            _buildNavItem('Contact Us', false),
+            _buildNavItem(context, 'MariOT', '/', 'MariOT'),
+            _buildNavItem(context, 'Projects', '/projects', 'Projects'),
+            _buildNavItem(context, 'Publications', '/publications', 'Publications'),
+            _buildNavItem(context, 'MariOT Forum', '/forum', 'MariOT Forum'),
+            _buildNavItem(context, 'Maritime Matrix', '/maritime-matrix', 'Maritime Matrix'),
+            _buildNavItem(context, 'Datasets', '/datasets', 'Datasets'),
+            _buildNavItem(context, 'News', '/news', 'News'),
+            _buildNavItem(context, 'Booking', '/booking', 'Booking'),
+            _buildNavItem(context, 'Contact Us', '/contact', 'Contact Us'),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildNavItem(String title, bool isActive) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-          color: isActive ? const Color(0xFF2E7D8B) : Colors.black87,
-          decoration: isActive ? TextDecoration.underline : TextDecoration.none,
-          decorationColor: const Color(0xFF2E7D8B),
-          decorationThickness: 2,
+  Widget _buildNavItem(BuildContext context, String title, String route, String pageKey) {
+    final isActive = currentPage == pageKey;
+    
+    return InkWell(
+      onTap: () {
+        if (!isActive) {
+          Navigator.pushNamed(context, route);
+        }
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+            color: isActive ? const Color(0xFF2E7D8B) : Colors.black87,
+            decoration: isActive ? TextDecoration.underline : TextDecoration.none,
+            decorationColor: const Color(0xFF2E7D8B),
+            decorationThickness: 2,
+          ),
         ),
       ),
     );
   }
 }
-

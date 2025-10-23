@@ -1,0 +1,265 @@
+import 'package:flutter/material.dart';
+import '../widgets/page_layout.dart';
+
+class ForumPage extends StatelessWidget {
+  const ForumPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return PageLayout(
+      currentPage: 'MariOT Forum',
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(40),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'MariOT Forum',
+              style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xFF2E7D8B),
+                letterSpacing: 0.5,
+              ),
+            ),
+            const SizedBox(height: 30),
+            
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    const Color(0xFF2E7D8B).withOpacity(0.1),
+                    const Color(0xFF4A9BB3).withOpacity(0.1),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: const Color(0xFF2E7D8B).withOpacity(0.3)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.forum,
+                        color: const Color(0xFF2E7D8B),
+                        size: 32,
+                      ),
+                      const SizedBox(width: 16),
+                      Text(
+                        'Collaboration Platform',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF2E7D8B),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'The MariOT Forum will facilitate collaboration among academia, industry, and government to advance maritime cybersecurity. It will serve as a platform for sharing research findings, discussing challenges, and showcasing technology demonstrations conducted on the MariOT testbed.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      height: 1.6,
+                      color: Colors.grey.shade700,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+            const SizedBox(height: 40),
+            
+            Row(
+              children: [
+                Expanded(
+                  child: _buildFeatureCard(
+                    Icons.school,
+                    'Academia',
+                    'Universities and research institutions collaborating on maritime cybersecurity research',
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: _buildFeatureCard(
+                    Icons.business,
+                    'Industry',
+                    'Maritime companies and technology providers sharing practical insights',
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: _buildFeatureCard(
+                    Icons.account_balance,
+                    'Government',
+                    'Regulatory bodies and maritime authorities ensuring security standards',
+                  ),
+                ),
+              ],
+            ),
+            
+            const SizedBox(height: 40),
+            
+            _buildSectionCard(
+              'Forum Activities',
+              [
+                '📋 Research Findings Sharing',
+                '💬 Technical Discussions',
+                '🎯 Challenge Identification',
+                '🔬 Technology Demonstrations',
+                '📊 Best Practices Exchange',
+                '🤝 Partnership Opportunities',
+              ],
+            ),
+            
+            const SizedBox(height: 30),
+            
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                color: Colors.orange.shade50,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.orange.shade200),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.schedule,
+                        color: Colors.orange.shade700,
+                        size: 28,
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        'Coming Soon',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orange.shade700,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'The MariOT Forum is currently under development. Stay tuned for the official launch and registration details.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      height: 1.6,
+                      color: Colors.orange.shade800,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFeatureCard(IconData icon, String title, String description) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xFF2E7D8B).withOpacity(0.1),
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: Icon(
+              icon,
+              color: const Color(0xFF2E7D8B),
+              size: 32,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey.shade800,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            description,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 14,
+              height: 1.4,
+              color: Colors.grey.shade600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionCard(String title, List<String> items) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(25),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: const Color(0xFF2E7D8B),
+            ),
+          ),
+          const SizedBox(height: 20),
+          ...items.map((item) => Padding(
+            padding: const EdgeInsets.only(bottom: 12),
+            child: Text(
+              item,
+              style: TextStyle(
+                fontSize: 16,
+                height: 1.4,
+                color: Colors.grey.shade700,
+              ),
+            ),
+          )).toList(),
+        ],
+      ),
+    );
+  }
+}
