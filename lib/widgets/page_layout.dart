@@ -33,7 +33,7 @@ class PageLayout extends StatelessWidget {
                 child: Text(
                   'MariOT - Maritime Operational Technology Testbed',
                   style: GoogleFonts.cinzel(
-                    fontSize: 48,
+                    fontSize: 30,
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
                     fontStyle: FontStyle.italic,
