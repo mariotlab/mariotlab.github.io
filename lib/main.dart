@@ -30,16 +30,48 @@ class MariOTApp extends StatelessWidget {
         useMaterial3: true,
       ),
       initialRoute: '/',
-      routes: {
-        '/': (context) => const MariOTHomePage(),
-        '/projects': (context) => const ProjectsPage(),
-        '/publications': (context) => const PublicationsPage(),
-        '/forum': (context) => const ForumPage(),
-        '/maritime-matrix': (context) => const MaritimeMatrixPage(),
-        '/datasets': (context) => const DatasetsPage(),
-        '/news': (context) => const NewsPage(),
-        '/booking': (context) => const BookingPage(),
-        '/contact': (context) => const ContactPage(),
+      onGenerateRoute: (settings) {
+        // Disable page transition animations
+        Widget page;
+        switch (settings.name) {
+          case '/':
+            page = const MariOTHomePage();
+            break;
+          case '/projects':
+            page = const ProjectsPage();
+            break;
+          case '/publications':
+            page = const PublicationsPage();
+            break;
+          case '/forum':
+            page = const ForumPage();
+            break;
+          case '/maritime-matrix':
+            page = const MaritimeMatrixPage();
+            break;
+          case '/datasets':
+            page = const DatasetsPage();
+            break;
+          case '/news':
+            page = const NewsPage();
+            break;
+          case '/booking':
+            page = const BookingPage();
+            break;
+          case '/contact':
+            page = const ContactPage();
+            break;
+          default:
+            page = const MariOTHomePage();
+        }
+        
+        // Return page with no transition animation
+        return PageRouteBuilder(
+          settings: settings,
+          pageBuilder: (context, animation, secondaryAnimation) => page,
+          transitionDuration: Duration.zero,
+          reverseTransitionDuration: Duration.zero,
+        );
       },
     );
   }
