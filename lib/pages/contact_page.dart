@@ -24,31 +24,9 @@ class ContactPage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _buildContactCard(),
-                      const SizedBox(height: 30),
-                      _buildLocationCard(),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 40),
-                Expanded(
-                  flex: 1,
-                  child: _buildQuickLinksCard(),
-                ),
-              ],
-            ),
-            
-            const SizedBox(height: 40),
-            
-            _buildTeamSection(),
+            _buildContactCard(),
+            const SizedBox(height: 30),
+            _buildLocationCard(),
             
             const SizedBox(height: 40),
             
@@ -167,12 +145,6 @@ class ContactPage extends StatelessWidget {
             Icons.email,
             'General Inquiries',
             'itrust@sutd.edu.sg',
-          ),
-          
-          _buildContactItem(
-            Icons.calendar_today,
-            'MariOT Booking',
-            'mariot_admin@sutd.edu.sg',
           ),
           
           _buildContactItem(

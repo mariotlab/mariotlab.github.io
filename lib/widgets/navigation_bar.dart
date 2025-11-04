@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 class MariOTNavigationBar extends StatelessWidget {
   final String currentPage;
@@ -33,9 +34,9 @@ class MariOTNavigationBar extends StatelessWidget {
             _buildNavItem(context, 'Publications', '/publications', 'Publications'),
             _buildNavItem(context, 'MariOT Forum', '/forum', 'MariOT Forum'),
             _buildNavItem(context, 'Maritime Matrix', '/maritime-matrix', 'Maritime Matrix'),
-            _buildNavItem(context, 'Datasets', '/datasets', 'Datasets'),
+            _buildExternalNavItem('Datasets', 'https://itrust.sutd.edu.sg/itrust-labs_datasets/'),
             _buildNavItem(context, 'News', '/news', 'News'),
-            _buildNavItem(context, 'Booking', '/booking', 'Booking'),
+            _buildExternalNavItem('Booking', 'https://itrust.sutd.edu.sg/itrust-labs_overview/'),
             _buildNavItem(context, 'Contact Us', '/contact', 'Contact Us'),
           ],
         ),
@@ -64,6 +65,40 @@ class MariOTNavigationBar extends StatelessWidget {
             decorationColor: const Color(0xFF2E7D8B),
             decorationThickness: 2,
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildExternalNavItem(String title, String url) {
+    return InkWell(
+      onTap: () {
+        // Use anchor element for better compatibility
+        final anchor = html.AnchorElement(href: url)
+          ..setAttribute('target', '_blank')
+          ..setAttribute('rel', 'noopener noreferrer');
+        anchor.click();
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+                color: Colors.black87,
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(
+              Icons.open_in_new,
+              size: 14,
+              color: Colors.grey.shade600,
+            ),
+          ],
         ),
       ),
     );
