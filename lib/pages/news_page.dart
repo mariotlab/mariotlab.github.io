@@ -31,7 +31,7 @@ class NewsPage extends StatelessWidget {
               Icons.celebration,
               Colors.green,
               true,
-              'assets/images/inauguration_photo.jpg',
+              'assets/images/pic1.jpeg',
             ),
             
             _buildNewsItem(
@@ -53,20 +53,11 @@ class NewsPage extends StatelessWidget {
             ),
             
             _buildNewsItem(
-              'Q2 2025',
+              'Coming Soon',
               'Public Dataset Release',
               'MariOT will release its first comprehensive maritime cybersecurity dataset to the public, supporting global research initiatives in maritime cybersecurity.',
               Icons.dataset,
               Colors.purple,
-              false,
-            ),
-            
-            _buildNewsItem(
-              'Q3 2025',
-              'International Maritime Cybersecurity Conference',
-              'MariOT will host an international conference bringing together maritime industry leaders, researchers, and cybersecurity experts to discuss the future of maritime security.',
-              Icons.event,
-              Colors.teal,
               false,
             ),
             
@@ -370,8 +361,7 @@ class NewsPage extends StatelessWidget {
             child: Image.asset(
               imagePath,
               width: double.infinity,
-              height: 200,
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
                   width: double.infinity,

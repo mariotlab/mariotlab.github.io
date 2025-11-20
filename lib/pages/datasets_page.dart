@@ -9,20 +9,21 @@ class DatasetsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageLayout(
       currentPage: 'Datasets',
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(40),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      child: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
-                Icons.open_in_new,
-                size: 100,
+                Icons.dataset,
+                size: 80,
                 color: const Color(0xFF2E7D8B),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 30),
               Text(
-                'MariOT Datasets',
+                'Datasets',
                 style: TextStyle(
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
@@ -30,8 +31,53 @@ class DatasetsPage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 40),
+              
+              // MariOT Dataset - Coming Soon
               Container(
+                width: 600,
+                padding: const EdgeInsets.all(30),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey.shade200),
+                ),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.construction,
+                      size: 48,
+                      color: Colors.orange.shade700,
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      'MariOT Dataset',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade800,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      'Coming Soon',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.orange.shade700,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+              ),
+              
+              const SizedBox(height: 30),
+              
+              // Other Datasets
+              Container(
+                width: 600,
                 padding: const EdgeInsets.all(30),
                 decoration: BoxDecoration(
                   color: Colors.blue.shade50,
@@ -41,7 +87,7 @@ class DatasetsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'The datasets are hosted on the iTrust website.',
+                      'For other iTrust datasets, please visit:',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.grey.shade800,
@@ -54,7 +100,6 @@ class DatasetsPage extends StatelessWidget {
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
                         onTap: () {
-                          // Create a temporary anchor element and click it
                           final anchor = html.AnchorElement(href: 'https://itrust.sutd.edu.sg/itrust-labs_datasets/')
                             ..setAttribute('target', '_blank')
                             ..setAttribute('rel', 'noopener noreferrer');
@@ -84,20 +129,11 @@ class DatasetsPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    Text(
-                      'Note: If the page shows an error on first load, simply refresh it.',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.orange.shade700,
-                        fontStyle: FontStyle.italic,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
                   ],
                 ),
               ),
             ],
+            ),
           ),
         ),
       ),

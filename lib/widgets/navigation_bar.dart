@@ -34,7 +34,7 @@ class MariOTNavigationBar extends StatelessWidget {
             _buildNavItem(context, 'Publications', '/publications', 'Publications'),
             _buildNavItem(context, 'MariOT Forum', '/forum', 'MariOT Forum'),
             _buildNavItem(context, 'Maritime Matrix', '/maritime-matrix', 'Maritime Matrix'),
-            _buildExternalNavItem('Datasets', 'https://itrust.sutd.edu.sg/itrust-labs_datasets/'),
+            _buildNavItem(context, 'Datasets', '/datasets', 'Datasets'),
             _buildNavItem(context, 'News', '/news', 'News'),
             _buildExternalNavItem('Booking', 'https://itrust.sutd.edu.sg/itrust-labs_overview/'),
             _buildNavItem(context, 'Contact Us', '/contact', 'Contact Us'),
