@@ -47,50 +47,6 @@ class PublicationsPage extends StatelessWidget {
               'Advanced systems-theoretic approach to analyzing cybersecurity threats in maritime environments using STPA methodology.',
               Icons.psychology,
             ),
-            
-            const SizedBox(height: 40),
-            
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(25),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade50,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.blue.shade200),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.info_outline,
-                        color: Colors.blue.shade700,
-                        size: 28,
-                      ),
-                      const SizedBox(width: 12),
-                      Text(
-                        'Research Collaboration',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade700,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    'We welcome collaboration opportunities with academic institutions, industry partners, and government agencies. Contact us to discuss potential research partnerships and publication opportunities.',
-                    style: TextStyle(
-                      fontSize: 18,
-                      height: 1.6,
-                      color: Colors.blue.shade800,
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),

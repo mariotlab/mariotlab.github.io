@@ -47,58 +47,123 @@ class MariOTNavigationBar extends StatelessWidget {
   Widget _buildNavItem(BuildContext context, String title, String route, String pageKey) {
     final isActive = currentPage == pageKey;
     
-    return InkWell(
+    return _HoverableNavItem(
+      isActive: isActive,
+      title: title,
       onTap: () {
         if (!isActive) {
           Navigator.pushNamed(context, route);
         }
       },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-        child: Text(
-          title,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-            color: isActive ? const Color(0xFF2E7D8B) : Colors.black87,
-            decoration: isActive ? TextDecoration.underline : TextDecoration.none,
-            decorationColor: const Color(0xFF2E7D8B),
-            decorationThickness: 2,
+    );
+  }
+
+  Widget _buildExternalNavItem(String title, String url) {
+    return _HoverableExternalNavItem(
+      title: title,
+      url: url,
+    );
+  }
+}
+
+class _HoverableNavItem extends StatefulWidget {
+  final bool isActive;
+  final String title;
+  final VoidCallback onTap;
+
+  const _HoverableNavItem({
+    required this.isActive,
+    required this.title,
+    required this.onTap,
+  });
+
+  @override
+  State<_HoverableNavItem> createState() => _HoverableNavItemState();
+}
+
+class _HoverableNavItemState extends State<_HoverableNavItem> {
+  bool _isHovering = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovering = true),
+      onExit: (_) => setState(() => _isHovering = false),
+      cursor: SystemMouseCursors.click,
+      child: InkWell(
+        onTap: widget.onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+          child: Text(
+            widget.title,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: widget.isActive ? FontWeight.bold : FontWeight.normal,
+              color: widget.isActive ? const Color(0xFF2E7D8B) : Colors.black87,
+              decoration: (widget.isActive || _isHovering) ? TextDecoration.underline : TextDecoration.none,
+              decorationColor: const Color(0xFF2E7D8B),
+              decorationThickness: 2,
+            ),
           ),
         ),
       ),
     );
   }
+}
 
-  Widget _buildExternalNavItem(String title, String url) {
-    return InkWell(
-      onTap: () {
-        // Use anchor element for better compatibility
-        final anchor = html.AnchorElement(href: url)
-          ..setAttribute('target', '_blank')
-          ..setAttribute('rel', 'noopener noreferrer');
-        anchor.click();
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
-                color: Colors.black87,
+class _HoverableExternalNavItem extends StatefulWidget {
+  final String title;
+  final String url;
+
+  const _HoverableExternalNavItem({
+    required this.title,
+    required this.url,
+  });
+
+  @override
+  State<_HoverableExternalNavItem> createState() => _HoverableExternalNavItemState();
+}
+
+class _HoverableExternalNavItemState extends State<_HoverableExternalNavItem> {
+  bool _isHovering = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovering = true),
+      onExit: (_) => setState(() => _isHovering = false),
+      cursor: SystemMouseCursors.click,
+      child: InkWell(
+        onTap: () {
+          final anchor = html.AnchorElement(href: widget.url)
+            ..setAttribute('target', '_blank')
+            ..setAttribute('rel', 'noopener noreferrer');
+          anchor.click();
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                widget.title,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black87,
+                  decoration: _isHovering ? TextDecoration.underline : TextDecoration.none,
+                  decorationColor: const Color(0xFF2E7D8B),
+                  decorationThickness: 2,
+                ),
               ),
-            ),
-            const SizedBox(width: 4),
-            Icon(
-              Icons.open_in_new,
-              size: 14,
-              color: Colors.grey.shade600,
-            ),
-          ],
+              const SizedBox(width: 4),
+              Icon(
+                Icons.open_in_new,
+                size: 14,
+                color: Colors.grey.shade600,
+              ),
+            ],
+          ),
         ),
       ),
     );
