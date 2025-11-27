@@ -24,28 +24,52 @@ class PublicationsPage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             
-            _buildPublicationCard(
-              'MariOT: Maritime Operational Technology Shipboard Testbed for Cybersecurity Research, Training, Exercises, and Education',
-              'Yousaf, A., Zhou, J., & Chattopadhyay, S.',
-              'IEEE Cybersecurity Magazine, 2025',
-              'This paper presents the design and implementation of MariOT, the world\'s first industry-grade maritime cyber-physical system testbed for comprehensive cybersecurity research.',
-              Icons.article,
+            _buildPublicationItem(
+              'Yousaf, A., Kalvin, L. L. Y., Li, M., & Zhou, J. (2026). Spying by SPi, I Got the Birds-Eye. In M. Manulis (Ed.), Applied Cryptography and Network Security Workshops (pp. 121–140). Springer Nature Switzerland.',
             ),
             
-            _buildPublicationCard(
-              'Maritime Cyber Risk Assessment Framework',
-              'Research Team at iTrust, SUTD',
-              'Under Review, 2025',
-              'A comprehensive framework for assessing cybersecurity risks in maritime operational technology systems, with practical applications in the shipping industry.',
-              Icons.assessment,
+            _buildPublicationItem(
+              'Yousaf, A., Zhou, J., & Chattopadhyay, S. (2025). Maritime Operational Technology Shipboard Testbed for Cybersecurity Research, Training, Exercises, and Education. IEEE Security & Privacy, 2–12.',
             ),
             
-            _buildPublicationCard(
-              'STPA-Cyber: Systems-Theoretic Process Analysis for Maritime Cybersecurity',
-              'iTrust Research Collaboration',
-              'In Preparation, 2025',
-              'Advanced systems-theoretic approach to analyzing cybersecurity threats in maritime environments using STPA methodology.',
-              Icons.psychology,
+            _buildPublicationItem(
+              'Zhou, J. (2025). Maritime Cybersecurity: A Big Change Ahead. IEEE Security & Privacy, 23(4), 4–7.',
+            ),
+            
+            _buildPublicationItem(
+              'Zeyu Y., Liang H., Yujiao H., Peng C., Jiming C., & Zhou, J. (2025). ADIS: Detecting and Identifying Manipulated PLC Program Variables Using State-Aware Dependency Graph. IEEE Transactions on Information Forensics and Security.',
+            ),
+            
+            _buildPublicationItem(
+              'Yousaf, A., Gunawan, S., Basnet, S., Bolbot, V., Zhou, J., & Valdez Banda, O. A. (2025). STPA-Cyber: A Semi-Automated Cyber Risk Assessment Framework for Maritime Cybersecurity. Computers & Security, 157, 104559.',
+            ),
+            
+            _buildPublicationItem(
+              'Yousaf, A., Amro, A., Kwa, P. T. H., Li, M., & Zhou, J. (2024). Cyber Risk Assessment of Cyber-Enabled Autonomous Cargo Vessel. International Journal of Critical Infrastructure Protection, 46, 100695.',
+            ),
+            
+            _buildPublicationItem(
+              'Yousaf, A., & Zhou, J. (2024). From Sinking to Saving: MITRE ATT&CK and D3FEND Frameworks for Maritime Cybersecurity. International Journal of Information Security, 23(3), 1603–1618.',
+            ),
+            
+            _buildPublicationItem(
+              'Li, M., Yousaf, A., Goh, M., Zhou, J., & Chattopadhyay, S. (2024). Guidelines for Cyber Risk Management in Autonomous Shipping. In M. Andreoni (Ed.), Applied Cryptography and Network Security Workshops (pp. 143–161). Springer Nature Switzerland.',
+            ),
+            
+            _buildPublicationItem(
+              'Meng, J., Yang, Z., Zhang, Z., Geng, Y., Deng, R., Cheng, P., Chen, J., & Zhou, J. (2023). Sepanner: Analyzing Semantics of Controller Variables in Industrial Control Systems based on Network Traffic. Proceedings of the 39th Annual Computer Security Applications Conference, 310–323.',
+            ),
+            
+            _buildPublicationItem(
+              'Bytes, A., Rajput, P. H. N., Doumanidis, C., Maniatakos, M., Zhou, J., & Tippenhauer, N. O. (2023). Fieldfuzz: In Situ Blackbox Fuzzing of Proprietary Industrial Automation Runtimes via the Network. Proceedings of the 26th International Symposium on Research in Attacks, Intrusions and Defenses, 499–512.',
+            ),
+            
+            _buildPublicationItem(
+              'Rajaram, P., Rajasekaran, R., Goh, M., Zhou, J., & Tan, K. (2022). The Need for a Testbed for Strengthening Maritime Cybersecurity. SNAMES 41st Annual Journal, 60–73.',
+            ),
+            
+            _buildPublicationItem(
+              'Rajaram, P., Goh, M., & Zhou, J. (2022). Guidelines for Cyber Risk Management in Shipboard Operational Technology Systems. Journal of Physics: Conference Series, 2311(1), 012002.',
             ),
           ],
         ),
@@ -53,86 +77,46 @@ class PublicationsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildPublicationCard(String title, String authors, String venue, String abstract, IconData icon) {
+  Widget _buildPublicationItem(String citation) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.only(bottom: 24),
-      padding: const EdgeInsets.all(25),
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
-            spreadRadius: 2,
-            blurRadius: 8,
+            color: Colors.grey.withOpacity(0.08),
+            spreadRadius: 1,
+            blurRadius: 4,
             offset: const Offset(0, 2),
           ),
         ],
         border: Border.all(color: Colors.grey.shade200),
       ),
-      child: Column(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF2E7D8B).withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Icon(
-                  icon,
-                  color: const Color(0xFF2E7D8B),
-                  size: 24,
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey.shade800,
-                        height: 1.3,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      authors,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xFF2E7D8B),
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      venue,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.grey.shade600,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          Container(
+            margin: const EdgeInsets.only(top: 8),
+            width: 8,
+            height: 8,
+            decoration: BoxDecoration(
+              color: const Color(0xFF2E7D8B),
+              shape: BoxShape.circle,
+            ),
           ),
-          const SizedBox(height: 16),
-          Text(
-            abstract,
-            style: TextStyle(
-              fontSize: 15,
-              height: 1.5,
-              color: Colors.grey.shade700,
+          const SizedBox(width: 16),
+          Expanded(
+            child: Text(
+              citation,
+              style: TextStyle(
+                fontSize: 15,
+                height: 1.6,
+                color: Colors.grey.shade800,
+              ),
+              textAlign: TextAlign.justify,
             ),
           ),
         ],

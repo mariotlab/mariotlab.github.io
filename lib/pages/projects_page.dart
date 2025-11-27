@@ -25,26 +25,14 @@ class ProjectsPage extends StatelessWidget {
             const SizedBox(height: 30),
             
             _buildProjectCard(
-              '🔧 Hybrid Maritime OT/IT Infrastructure',
-              'Development of hybrid maritime cyber-physical systems that integrate operational technology (OT) and information technology (IT) components for enhanced cybersecurity research.',
-              Icons.engineering,
-            ),
-            
-            _buildProjectCard(
-              '⚠️ Cyber-Attack Experiments',
-              'Proof-of-concept cyber-attack experiments demonstrating physical effects, including steering control compromise scenarios and their impact on maritime operations.',
-              Icons.security,
-            ),
-            
-            _buildProjectCard(
               '📊 Maritime Cybersecurity Datasets',
-              'Creation of realistic maritime cybersecurity datasets capturing both normal operations and attack scenarios for global research community.',
+              'Dataset is coming soon.',
               Icons.dataset,
             ),
             
             _buildProjectCard(
               '🚢 Future Maritime Systems',
-              'Future extensions for autonomous and green-energy ship systems, advancing the next generation of sustainable maritime technology.',
+              'Currently working on NSOE Phase 2 for autonomous and green-energy ship systems, advancing the next generation of sustainable maritime technology.',
               Icons.eco,
             ),
             
