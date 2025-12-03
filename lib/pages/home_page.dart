@@ -209,12 +209,46 @@ class MariOTHomePage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Text(
-                    'A. Yousaf, J. Zhou and S. Chattopadhyay, "Maritime Operational Technology Shipboard Testbed for Cybersecurity Research, Training, Exercises, and Education" in IEEE Security & Privacy, vol. , no. 01, pp. 2-12, PrePrints 5555, doi: 10.1109/MSEC.2025.3613711.',
-                    style: TextStyle(
-                      fontSize: 14,
-                      height: 1.6,
-                      color: Colors.blue.shade800,
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontSize: 14,
+                        height: 1.6,
+                        color: Colors.blue.shade800,
+                      ),
+                      children: [
+                        const TextSpan(
+                          text: 'A. Yousaf, J. Zhou and S. Chattopadhyay, "Maritime Operational Technology Shipboard Testbed for Cybersecurity Research, Training, Exercises, and Education" in IEEE Security & Privacy, vol. , no. 01, pp. 2-12, PrePrints 5555, doi: ',
+                        ),
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.baseline,
+                          baseline: TextBaseline.alphabetic,
+                          child: MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              onTap: () {
+                                final anchor = html.AnchorElement(href: 'https://ieeexplore.ieee.org/document/11204793')
+                                  ..setAttribute('target', '_blank')
+                                  ..setAttribute('rel', 'noopener noreferrer');
+                                anchor.click();
+                              },
+                              child: Text(
+                                '10.1109/MSEC.2025.3613711',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  height: 1.6,
+                                  color: Colors.blue.shade700,
+                                  decoration: TextDecoration.underline,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const TextSpan(
+                          text: '.',
+                        ),
+                      ],
                     ),
                   ),
                 ],
