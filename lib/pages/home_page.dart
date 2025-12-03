@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/page_layout.dart';
+import 'dart:html' as html;
 
 class MariOTHomePage extends StatelessWidget {
   const MariOTHomePage({super.key});
@@ -36,15 +37,50 @@ class MariOTHomePage extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 20),
-                  Text(
-                    'MariOT, developed at iTrust, Singapore University of Technology and Design (SUTD), provides such an environment. It is a hybrid maritime cyber-physical testbed comprising simulated, emulated, Hardware-In-the-Loop (HIL)-based, and real shipboard hardware systems. Whenever real ship components are unsuitable for a static laboratory setting, HIL systems are used to achieve high realism. This combination enables high-fidelity maritime simulations for cybersecurity research, training, education, and technology validation while maintaining safety and operational accuracy.',
-                    style: TextStyle(
-                      fontSize: 14,
-                      height: 1.6,
-                      color: Colors.grey.shade800,
-                      letterSpacing: 0.3,
-                    ),
+                  RichText(
                     textAlign: TextAlign.justify,
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontSize: 14,
+                        height: 1.6,
+                        color: Colors.grey.shade800,
+                        letterSpacing: 0.3,
+                      ),
+                      children: [
+                        const TextSpan(
+                          text: 'MariOT, developed at ',
+                        ),
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.baseline,
+                          baseline: TextBaseline.alphabetic,
+                          child: MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              onTap: () {
+                                final anchor = html.AnchorElement(href: 'https://itrust.sutd.edu.sg')
+                                  ..setAttribute('target', '_blank')
+                                  ..setAttribute('rel', 'noopener noreferrer');
+                                anchor.click();
+                              },
+                              child: Text(
+                                'iTrust',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  height: 1.6,
+                                  color: Colors.blue.shade700,
+                                  letterSpacing: 0.3,
+                                  decoration: TextDecoration.underline,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const TextSpan(
+                          text: ', Singapore University of Technology and Design (SUTD), provides such an environment. It is a hybrid maritime cyber-physical testbed comprising simulated, emulated, Hardware-In-the-Loop (HIL)-based, and real shipboard hardware systems. Whenever real ship components are unsuitable for a static laboratory setting, HIL systems are used to achieve high realism. This combination enables high-fidelity maritime simulations for cybersecurity research, training, education, and technology validation while maintaining safety and operational accuracy.',
+                        ),
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 20),
                   Text(
@@ -102,6 +138,47 @@ class MariOTHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
+            // Funding Information Section
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                color: Colors.green.shade50,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.green.shade200),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.account_balance,
+                        color: Colors.green.shade700,
+                        size: 28,
+                      ),
+                      const SizedBox(width: 12),
+                      Text(
+                        'Project Information',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green.shade700,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  _buildInfoRow('Commissioned:', '2024'),
+                  const SizedBox(height: 8),
+                  _buildInfoRow('Funding Agency:', 'Singapore Maritime Institute (SMI) / Maritime and Port Authority of Singapore (MPA)'),
+                  const SizedBox(height: 8),
+                  _buildInfoRow('Project Code:', 'SMI-2022-MTP-05'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(25),
@@ -146,6 +223,34 @@ class MariOTHomePage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildInfoRow(String label, String value) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 150,
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: Colors.green.shade800,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Text(
+            value,
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.green.shade900,
+            ),
+          ),
+        ),
+      ],
     );
   }
 
