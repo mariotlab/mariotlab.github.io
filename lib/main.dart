@@ -19,7 +19,7 @@ class MariOTApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MariOT - Maritime Operational Technology Testbed',
+      title: 'MariOT - Maritime Testbed of Shipboard Operational Technology',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
