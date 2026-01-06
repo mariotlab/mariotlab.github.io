@@ -59,7 +59,7 @@ class ForumPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  Text(
+                  SelectableText(
                     'The MariOT Forum will facilitate collaboration among academia, industry, and government to advance maritime cybersecurity. It will serve as a platform for sharing research findings, discussing challenges, and showcasing technology demonstrations conducted on the MariOT testbed.',
                     style: TextStyle(
                       fontSize: 18,
@@ -147,7 +147,7 @@ class ForumPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Text(
+                  SelectableText(
                     'The MariOT Forum is currently under development. Stay tuned for the official launch and registration details.',
                     style: TextStyle(
                       fontSize: 18,
@@ -204,7 +204,7 @@ class ForumPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          Text(
+          SelectableText(
             description,
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -249,7 +249,7 @@ class ForumPage extends StatelessWidget {
           const SizedBox(height: 20),
           ...items.map((item) => Padding(
             padding: const EdgeInsets.only(bottom: 12),
-            child: Text(
+            child: SelectableText(
               item,
               style: TextStyle(
                 fontSize: 16,

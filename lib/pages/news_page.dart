@@ -98,7 +98,7 @@ class NewsPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Text(
+                  SelectableText(
                     'Subscribe to our newsletter or follow our social media channels to stay informed about the latest developments, research findings, and upcoming events related to MariOT.',
                     style: TextStyle(
                       fontSize: 18,
@@ -234,7 +234,7 @@ class NewsPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                Text(
+                SelectableText(
                   description,
                   style: TextStyle(
                     fontSize: 16,

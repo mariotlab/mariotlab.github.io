@@ -109,7 +109,7 @@ class PublicationsPage extends StatelessWidget {
           ),
           const SizedBox(width: 16),
           Expanded(
-            child: Text(
+            child: SelectableText(
               citation,
               style: TextStyle(
                 fontSize: 15,

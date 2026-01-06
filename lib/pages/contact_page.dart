@@ -65,7 +65,7 @@ class ContactPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Text(
+                  SelectableText(
                     'We welcome collaboration opportunities with academic institutions, industry partners, and government agencies. Whether you\'re interested in research partnerships, technology validation, or training programs, we\'d love to hear from you.',
                     style: TextStyle(
                       fontSize: 18,
@@ -182,7 +182,7 @@ class ContactPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 2),
-                Text(
+                SelectableText(
                   value,
                   style: TextStyle(
                     fontSize: 16,
@@ -229,7 +229,7 @@ class ContactPage extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          Text(
+          SelectableText(
             'Located in the heart of Singapore\'s eastern region, SUTD is easily accessible by public transport and car. The iTrust centre is housed within the university\'s state-of-the-art facilities.',
             style: TextStyle(
               fontSize: 16,
@@ -258,7 +258,7 @@ class ContactPage extends StatelessWidget {
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: Text(
+            child: SelectableText(
               text,
               style: TextStyle(
                 fontSize: 14,

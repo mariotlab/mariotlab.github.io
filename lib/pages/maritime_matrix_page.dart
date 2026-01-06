@@ -51,7 +51,7 @@ class MaritimeMatrixPage extends StatelessWidget {
                     color: const Color(0xFF2E7D8B).withOpacity(0.3),
                   ),
                 ),
-                child: Text(
+                child: SelectableText(
                   'The Maritime Matrix page is currently under development.\nPlease check back soon for updates.',
                   style: TextStyle(
                     fontSize: 18,

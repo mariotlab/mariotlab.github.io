@@ -124,7 +124,7 @@ class ProjectsPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  Text(
+                  SelectableText(
                     'These projects align with Singapore\'s Maritime Transformation Programme (SMI-2022-MTP-05), supporting the nation\'s vision for advanced maritime cybersecurity and digital transformation.',
                     style: TextStyle(
                       fontSize: 18,
@@ -189,7 +189,7 @@ class ProjectsPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 12),
-                Text(
+                SelectableText(
                   description,
                   style: TextStyle(
                     fontSize: 16,

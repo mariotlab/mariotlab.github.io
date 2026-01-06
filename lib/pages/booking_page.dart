@@ -59,7 +59,7 @@ class BookingPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  Text(
+                  SelectableText(
                     'Researchers, industry partners, and maritime professionals may request access to MariOT for research, training, or demonstration purposes. Please provide detailed information about your intended use and requirements.',
                     style: TextStyle(
                       fontSize: 18,
@@ -210,7 +210,7 @@ class BookingPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          Text(
+          SelectableText(
             description,
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -301,7 +301,7 @@ class BookingPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 4),
-                Text(
+                SelectableText(
                   description,
                   style: TextStyle(
                     fontSize: 14,
@@ -346,7 +346,7 @@ class BookingPage extends StatelessWidget {
                 size: 24,
               ),
               const SizedBox(width: 12),
-              Text(
+              SelectableText(
                 'mariot_admin@sutd.edu.sg',
                 style: TextStyle(
                   fontSize: 18,
@@ -405,7 +405,7 @@ class BookingPage extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text(
+            child: SelectableText(
               text,
               style: TextStyle(
                 fontSize: 16,
@@ -431,7 +431,7 @@ class BookingPage extends StatelessWidget {
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: Text(
+            child: SelectableText(
               text,
               style: TextStyle(
                 fontSize: 16,

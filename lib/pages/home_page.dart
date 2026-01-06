@@ -26,7 +26,7 @@ class MariOTHomePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  SelectableText(
                     'The global maritime fleet is vast and diverse, encompassing ships of varying types, ages, and configurations, each integrating different Information Technology (IT) and Operational Technology (OT) systems. This diversity makes maritime cybersecurity a complex and growing challenge, as vulnerabilities differ across platforms and legacy systems. Conducting cybersecurity experiments on actual vessels is not feasible due to the risks of disrupting or damaging critical onboard systems. To address this challenge, maritime cybersecurity research must be conducted in a controlled environment that replicates shipboard conditions safely and accurately.',
                     style: TextStyle(
                       fontSize: 14,
@@ -37,9 +37,9 @@ class MariOTHomePage extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 20),
-                  RichText(
+                  SelectableText.rich(
                     textAlign: TextAlign.justify,
-                    text: TextSpan(
+                    TextSpan(
                       style: TextStyle(
                         fontSize: 14,
                         height: 1.6,
@@ -83,7 +83,7 @@ class MariOTHomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  Text(
+                  SelectableText(
                     'The MariOT network mirrors real-world ship communications by using the same protocols and configurations found in modern vessels. It supports full packet capture for cybersecurity analysis and retains representative vulnerabilities, such as factory default settings and weak passwords, to create realistic training conditions. For example, the navigational bridge adheres to the NMEA (IEC 61162) standard, allowing researchers and seafarers to investigate maritime cybersecurity threats in a setting that faithfully reproduces the technical and operational complexity of real ships.',
                     style: TextStyle(
                       fontSize: 14,
@@ -209,8 +209,8 @@ class MariOTHomePage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  RichText(
-                    text: TextSpan(
+                  SelectableText.rich(
+                    TextSpan(
                       style: TextStyle(
                         fontSize: 14,
                         height: 1.6,
@@ -276,7 +276,7 @@ class MariOTHomePage extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Text(
+          child: SelectableText(
             value,
             style: TextStyle(
               fontSize: 14,
