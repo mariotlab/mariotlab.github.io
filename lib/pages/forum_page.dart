@@ -274,6 +274,120 @@ class ForumPage extends StatelessWidget {
             
             const SizedBox(height: 40),
             
+            // BALTIC-FIT Collaboration
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    const Color(0xFF2E7D8B).withOpacity(0.15),
+                    const Color(0xFF4A9BB3).withOpacity(0.15),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: const Color(0xFF2E7D8B),
+                  width: 2,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF2E7D8B),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Icon(
+                          Icons.handshake,
+                          color: Colors.white,
+                          size: 28,
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'BALTIC-FIT Collaboration',
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFF2E7D8B),
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              'Horizon Europe Project',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey.shade600,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  SelectableText(
+                    'MariOT welcomed representatives from the BALTIC-FIT Horizon Europe project, including Kristine Carjova from TalTech Estonian Maritime Academy and Prof. Carlos Jahn from Fraunhofer CML. The visit focused on maritime cybersecurity, digital resilience, and opportunities for future collaboration. This collaboration is strengthened by the MoU on Maritime Cybersecurity between Estonia and Singapore, implemented with the support of the Singapore Maritime Institute (SMI).',
+                    style: TextStyle(
+                      fontSize: 18,
+                      height: 1.6,
+                      color: Colors.grey.shade800,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        final anchor = html.AnchorElement(href: 'https://www.linkedin.com/posts/baltic-fit-project_horizoneurope-balticfit-decarbonization-activity-7417899922777260034-AeyN?utm_source=share&utm_medium=member_android&rcm=ACoAAAAeuJcBgerYQUMajOLii_Xs513WHsINNIk')
+                          ..setAttribute('target', '_blank')
+                          ..setAttribute('rel', 'noopener noreferrer');
+                        anchor.click();
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF2E7D8B),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            Icon(
+                              Icons.open_in_new,
+                              color: Colors.white,
+                              size: 18,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'View LinkedIn Post',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+            const SizedBox(height: 40),
+            
             Row(
               children: [
                 Expanded(

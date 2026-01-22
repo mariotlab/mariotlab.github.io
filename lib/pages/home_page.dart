@@ -94,30 +94,27 @@ class MariOTHomePage extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 30),
-                  // Images stacked vertically
+                  // Image
                   Center(
                     child: Column(
                       children: [
                         SizedBox(
-                          width: double.infinity,
-                          height: 350,
+                          width: MediaQuery.of(context).size.width * 0.65,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
-                              'assets/images/pic1.png',
+                              'assets/images/nafinal.png',
                               width: double.infinity,
-                              height: 350,
                               fit: BoxFit.contain,
                               errorBuilder: (context, error, stackTrace) {
                                 return Image.asset(
-                                  'assets/images/pic1.jpeg',
+                                  'assets/images/nafinal.jpg',
                                   width: double.infinity,
-                                  height: 350,
                                   fit: BoxFit.contain,
                                   errorBuilder: (context, error, stackTrace) {
                                     return Container(
                                       width: double.infinity,
-                                      height: 350,
+                                      height: 200,
                                       decoration: BoxDecoration(
                                         color: Colors.grey.shade200,
                                         borderRadius: BorderRadius.circular(8),
@@ -132,7 +129,7 @@ class MariOTHomePage extends StatelessWidget {
                                           ),
                                           const SizedBox(height: 8),
                                           Text(
-                                            'pic1 image not found',
+                                            'nafinal image not found',
                                             style: TextStyle(
                                               color: Colors.grey.shade500,
                                               fontSize: 14,
@@ -147,45 +144,13 @@ class MariOTHomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: double.infinity,
-                          height: 525,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              'assets/images/net2.png',
-                              width: double.infinity,
-                              height: 525,
-                              fit: BoxFit.contain,
-                              errorBuilder: (context, error, stackTrace) {
-                                return Container(
-                                  width: double.infinity,
-                                  height: 525,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey.shade200,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(
-                                        Icons.image_not_supported,
-                                        color: Colors.grey.shade400,
-                                        size: 48,
-                                      ),
-                                      const SizedBox(height: 8),
-                                      Text(
-                                        'net2 image not found',
-                                        style: TextStyle(
-                                          color: Colors.grey.shade500,
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                            ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Figure: network architecture',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.grey.shade600,
                           ),
                         ),
                       ],
