@@ -10,7 +10,7 @@ class MariOTHomePage extends StatelessWidget {
     return PageLayout(
       currentPage: 'MariOT',
       child: SingleChildScrollView(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.fromLTRB(40, 60, 40, 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -103,12 +103,12 @@ class MariOTHomePage extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
-                              'assets/images/nafinal.png',
+                              'assets/images/na2.png',
                               width: double.infinity,
                               fit: BoxFit.contain,
                               errorBuilder: (context, error, stackTrace) {
                                 return Image.asset(
-                                  'assets/images/nafinal.jpg',
+                                  'assets/images/na2.jpg',
                                   width: double.infinity,
                                   fit: BoxFit.contain,
                                   errorBuilder: (context, error, stackTrace) {
@@ -129,7 +129,7 @@ class MariOTHomePage extends StatelessWidget {
                                           ),
                                           const SizedBox(height: 8),
                                           Text(
-                                            'nafinal image not found',
+                                            'na2 image not found',
                                             style: TextStyle(
                                               color: Colors.grey.shade500,
                                               fontSize: 14,

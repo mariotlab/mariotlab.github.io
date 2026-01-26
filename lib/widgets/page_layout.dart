@@ -20,89 +20,103 @@ class PageLayout extends StatelessWidget {
           // Header Section
           Container(
             width: double.infinity,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF2E7D8B), Color(0xFF4A9BB3)],
+                colors: [
+                  const Color(0xFF1A5D6B),
+                  const Color(0xFF2E7D8B),
+                  const Color(0xFF4A9BB3),
+                ],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 4,
+                  offset: const Offset(0, 2),
+                ),
+              ],
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // iTrust Logo
-                  ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      const Color(0xFF2E7D8B).withOpacity(0.3),
-                      BlendMode.darken,
-                    ),
-                    child: Image.asset(
-                      'assets/images/itrustlogo.png',
-                      height: 60,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const SizedBox(width: 60);
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 30),
-                  
-                  // Title Text
-                  Flexible(
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style: GoogleFonts.cinzel(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w400,
-                          fontStyle: FontStyle.italic,
-                          shadows: [
-                            Shadow(
-                              offset: const Offset(2, 2),
-                              blurRadius: 4,
-                              color: Colors.black.withOpacity(0.3),
-                            ),
-                          ],
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'Mari',
-                            style: TextStyle(color: Colors.blue.shade300),
-                          ),
-                          const TextSpan(
-                            text: 'OT',
-                            style: TextStyle(color: Colors.red),
-                          ),
-                          const TextSpan(
-                            text: ' - Maritime Testbed of Shipboard Operational Technology',
-                            style: TextStyle(color: Colors.white),
+                  // MariOT Title
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: GoogleFonts.cinzel(
+                        fontSize: 59,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic,
+                        letterSpacing: 6,
+                        shadows: [
+                          Shadow(
+                            offset: const Offset(2, 2),
+                            blurRadius: 4,
+                            color: Colors.black.withOpacity(0.3),
                           ),
                         ],
                       ),
+                      children: [
+                        TextSpan(
+                          text: 'Mari',
+                          style: TextStyle(color: Colors.blue.shade300),
+                        ),
+                        const TextSpan(
+                          text: 'OT',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ],
                     ),
                   ),
-                  
-                  const SizedBox(width: 30),
-                  // SUTD Logo
-                  ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      const Color(0xFF4A9BB3).withOpacity(0.3),
-                      BlendMode.darken,
+                  const SizedBox(height: 4),
+                  // Subtitle
+                  Text(
+                    'Maritime Testbed of Shipboard Operational Technology',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.cinzel(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white.withOpacity(0.85),
+                      letterSpacing: 1.5,
                     ),
-                    child: Image.asset(
-                      'assets/images/sutdlogo.png',
-                      height: 60,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const SizedBox(width: 60);
-                      },
+                  ),
+                  const SizedBox(height: 8),
+                  // Developed at text
+                  Text(
+                    'Developed at iTrust, Singapore University of Technology and Design (SUTD)',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white.withOpacity(0.7),
+                      letterSpacing: 0.5,
                     ),
                   ),
                 ],
               ),
             ),
           ),
+          // Subtle Divider
+          Container(
+            height: 1,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.transparent,
+                  Colors.white.withOpacity(0.2),
+                  Colors.transparent,
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
           
           // Navigation Bar
           MariOTNavigationBar(currentPage: currentPage),

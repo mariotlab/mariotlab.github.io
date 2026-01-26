@@ -92,17 +92,18 @@ class _HoverableNavItemState extends State<_HoverableNavItem> {
       cursor: SystemMouseCursors.click,
       child: InkWell(
         onTap: widget.onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+          decoration: BoxDecoration(
+            color: _isHovering ? const Color(0xFF2E7D8B).withOpacity(0.1) : Colors.transparent,
+            borderRadius: BorderRadius.circular(6),
+          ),
           child: Text(
             widget.title,
             style: TextStyle(
               fontSize: 16,
               fontWeight: widget.isActive ? FontWeight.bold : FontWeight.normal,
               color: widget.isActive ? const Color(0xFF2E7D8B) : Colors.black87,
-              decoration: (widget.isActive || _isHovering) ? TextDecoration.underline : TextDecoration.none,
-              decorationColor: const Color(0xFF2E7D8B),
-              decorationThickness: 2,
             ),
           ),
         ),
@@ -140,8 +141,12 @@ class _HoverableExternalNavItemState extends State<_HoverableExternalNavItem> {
             ..setAttribute('rel', 'noopener noreferrer');
           anchor.click();
         },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+          decoration: BoxDecoration(
+            color: _isHovering ? const Color(0xFF2E7D8B).withOpacity(0.1) : Colors.transparent,
+            borderRadius: BorderRadius.circular(6),
+          ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -151,9 +156,6 @@ class _HoverableExternalNavItemState extends State<_HoverableExternalNavItem> {
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
                   color: Colors.black87,
-                  decoration: _isHovering ? TextDecoration.underline : TextDecoration.none,
-                  decorationColor: const Color(0xFF2E7D8B),
-                  decorationThickness: 2,
                 ),
               ),
               const SizedBox(width: 4),
