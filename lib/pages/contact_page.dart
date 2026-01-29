@@ -138,7 +138,7 @@ class ContactPage extends StatelessWidget {
           _buildContactItem(
             Icons.location_on,
             'Address',
-            '8 Somapah Road, Singapore 487372',
+            '8 Somapah Road, Building 2 Level 7, Singapore 487372',
           ),
           
           _buildContactItem(

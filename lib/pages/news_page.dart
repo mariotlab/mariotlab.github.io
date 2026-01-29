@@ -57,6 +57,8 @@ class NewsPage extends StatelessWidget {
               Colors.blue,
             ),
             
+            _buildBALTICFITItem(),
+            
             _buildNewsItem(
               'April 2025',
               'First Joint Maritime Cybersecurity Training',
@@ -758,6 +760,156 @@ class NewsPage extends StatelessWidget {
                           SizedBox(width: 8),
                           Text(
                             'View ClassNK Certificate (PDF)',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBALTICFITItem() {
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(bottom: 24),
+      padding: const EdgeInsets.all(25),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+        border: Border.all(
+          color: const Color(0xFF2E7D8B).withOpacity(0.3),
+          width: 2,
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: const Color(0xFF2E7D8B).withOpacity(0.1),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: const Icon(
+              Icons.handshake,
+              color: Color(0xFF2E7D8B),
+              size: 28,
+            ),
+          ),
+          const SizedBox(width: 20),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF2E7D8B).withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        '2025',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xFF2E7D8B),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: Colors.green.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        'COMPLETED',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green.shade700,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  'BALTIC-FIT Collaboration',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey.shade800,
+                    letterSpacing: 0.3,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Horizon Europe Project',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey.shade600,
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                SelectableText(
+                  'MariOT welcomed representatives from the BALTIC-FIT Horizon Europe project, including Kristine Carjova from TalTech Estonian Maritime Academy and Prof. Carlos Jahn from Fraunhofer CML. The visit focused on maritime cybersecurity, digital resilience, and opportunities for future collaboration. This collaboration is strengthened by the MoU on Maritime Cybersecurity between Estonia and Singapore, implemented with the support of the Singapore Maritime Institute (SMI).',
+                  style: TextStyle(
+                    fontSize: 16,
+                    height: 1.5,
+                    color: Colors.grey.shade600,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      final anchor = html.AnchorElement(href: 'https://www.linkedin.com/posts/baltic-fit-project_horizoneurope-balticfit-decarbonization-activity-7417899922777260034-AeyN?utm_source=share&utm_medium=member_android&rcm=ACoAAAAeuJcBgerYQUMajOLii_Xs513WHsINNIk')
+                        ..setAttribute('target', '_blank')
+                        ..setAttribute('rel', 'noopener noreferrer');
+                      anchor.click();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF2E7D8B),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Icon(
+                            Icons.open_in_new,
+                            color: Colors.white,
+                            size: 18,
+                          ),
+                          SizedBox(width: 8),
+                          Text(
+                            'View LinkedIn Post',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.white,

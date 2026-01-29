@@ -192,7 +192,7 @@ class MariOTHomePage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  _buildInfoRow('Commissioned:', '2024'),
+                  _buildInfoRow('Commissioned:', '2025'),
                   const SizedBox(height: 8),
                   _buildInfoRow('Funding Agency:', 'Singapore Maritime Institute (SMI) / Maritime and Port Authority of Singapore (MPA)'),
                   const SizedBox(height: 8),

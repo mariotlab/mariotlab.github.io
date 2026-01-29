@@ -39,63 +39,89 @@ class PageLayout extends StatelessWidget {
               ],
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 40),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // MariOT Title
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: GoogleFonts.cinzel(
-                        fontSize: 59,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.italic,
-                        letterSpacing: 6,
-                        shadows: [
-                          Shadow(
-                            offset: const Offset(2, 2),
-                            blurRadius: 4,
-                            color: Colors.black.withOpacity(0.3),
+                  // MariOT Title and Subtitle - Top Left
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // MariOT Title
+                      RichText(
+                        textAlign: TextAlign.left,
+                        text: TextSpan(
+                          style: GoogleFonts.cinzel(
+                            fontSize: 42,
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.italic,
+                            letterSpacing: 4,
+                            shadows: [
+                              Shadow(
+                                offset: const Offset(2, 2),
+                                blurRadius: 4,
+                                color: Colors.black.withOpacity(0.3),
+                              ),
+                            ],
+                          ),
+                          children: [
+                            TextSpan(
+                              text: 'Mari',
+                              style: TextStyle(color: Colors.blue.shade300),
+                            ),
+                            const TextSpan(
+                              text: 'OT',
+                              style: TextStyle(color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 3),
+                      // Subtitle - Stacked vertically
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Maritime Testbed of',
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.cinzel(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.italic,
+                              color: Colors.white.withOpacity(0.85),
+                              letterSpacing: 1,
+                            ),
+                          ),
+                          Text(
+                            'Shipboard Operational Technology',
+                            textAlign: TextAlign.left,
+                            style: GoogleFonts.cinzel(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.italic,
+                              color: Colors.white.withOpacity(0.85),
+                              letterSpacing: 1,
+                            ),
                           ),
                         ],
                       ),
-                      children: [
-                        TextSpan(
-                          text: 'Mari',
-                          style: TextStyle(color: Colors.blue.shade300),
-                        ),
-                        const TextSpan(
-                          text: 'OT',
-                          style: TextStyle(color: Colors.red),
-                        ),
-                      ],
-                    ),
+                    ],
                   ),
-                  const SizedBox(height: 4),
-                  // Subtitle
-                  Text(
-                    'Maritime Testbed of Shipboard Operational Technology',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.cinzel(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.white.withOpacity(0.85),
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  // Developed at text
-                  Text(
-                    'Developed at iTrust, Singapore University of Technology and Design (SUTD)',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white.withOpacity(0.7),
-                      letterSpacing: 0.5,
+                  const Spacer(),
+                  // Developed at text - Top Right
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      'Developed at iTrust, Singapore University\nof Technology and Design (SUTD)',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.white.withOpacity(0.7),
+                        letterSpacing: 0.5,
+                        height: 1.4,
+                      ),
                     ),
                   ),
                 ],

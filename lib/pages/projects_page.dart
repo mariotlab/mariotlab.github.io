@@ -54,7 +54,7 @@ class ProjectsPage extends StatelessWidget {
                     child: _buildGuidelineCard(
                       'assets/images/guideline2.png',
                       'Guidelines for Cyber Risk Management in Autonomous Shipping',
-                      'Final Version',
+                      '1st Edition, Volume-2',
                       'https://itrust.sutd.edu.sg/wp-content/uploads/2024/01/Guidelines-for-Cyber-Risk-Management-in-Autonomous-Shipping_final.pdf',
                     ),
                   ),
@@ -83,7 +83,7 @@ class ProjectsPage extends StatelessWidget {
             
             _buildProjectCard(
               '🚢 Future Maritime Systems',
-              'Currently working on NSOE Phase 2 for autonomous and green-energy ship systems, advancing the next generation of sustainable maritime technology.',
+              'Currently working on NSOE Phase 2.',
               Icons.eco,
             ),
             
