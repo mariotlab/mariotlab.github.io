@@ -109,19 +109,28 @@ class PageLayout extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  // Developed at text - Top Right
+                  // iTrust & SUTD logos - Top Right
                   Padding(
                     padding: const EdgeInsets.only(top: 4),
-                    child: Text(
-                      'Developed at iTrust, Singapore University\nof Technology and Design (SUTD)',
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white.withOpacity(0.7),
-                        letterSpacing: 0.5,
-                        height: 1.4,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(
+                          height: 56,
+                          child: Image.asset(
+                            'assets/images/itrustlogo.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        SizedBox(
+                          height: 48,
+                          child: Image.asset(
+                            'assets/images/sutdlogo.png',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

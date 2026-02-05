@@ -829,7 +829,7 @@ class NewsPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        '2025',
+                        '2026',
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
