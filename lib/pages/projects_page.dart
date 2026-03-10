@@ -75,11 +75,11 @@ class ProjectsPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             
-            _buildProjectCard(
-              '📊 Maritime Cybersecurity Datasets',
-              'Dataset is coming soon.',
-              Icons.dataset,
-            ),
+            //_buildProjectCard(
+             // '📊 Maritime Cybersecurity Datasets',
+              //'Dataset is coming soon.',
+              //Icons.dataset,
+           // ),
             
             _buildProjectCard(
               '🚢 Future Maritime Systems',
@@ -125,7 +125,7 @@ class ProjectsPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   SelectableText(
-                    'These projects align with Singapore\'s Maritime Transformation Programme (SMI-2022-MTP-05), supporting the nation\'s vision for advanced maritime cybersecurity and digital transformation.',
+                    'These projects align with Singapore\'s Maritime Transformation Programme, supporting the nation\'s vision for advanced maritime cybersecurity and digital transformation.',
                     style: TextStyle(
                       fontSize: 18,
                       height: 1.6,

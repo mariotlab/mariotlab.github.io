@@ -124,7 +124,7 @@ class PageLayout extends StatelessWidget {
                         ),
                         const SizedBox(width: 12),
                         SizedBox(
-                          height: 48,
+                          height: 56,
                           child: Image.asset(
                             'assets/images/sutdlogo.png',
                             fit: BoxFit.contain,

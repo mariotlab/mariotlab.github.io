@@ -131,7 +131,7 @@ class ForumPage extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 6),
                                 Text(
-                                  'November 3',
+                                  'November 3rd, 2025',
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w600,
@@ -147,11 +147,49 @@ class ForumPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   SelectableText(
-                    'MariOT organized a joint workshop with the Norwegian Embassy on November 3rd. This collaborative event brought together maritime cybersecurity experts, researchers, and industry professionals to discuss critical challenges and opportunities in maritime cybersecurity.',
+                    'This collaborative event brought together maritime cybersecurity experts, researchers, and industry professionals to discuss critical challenges and opportunities in maritime cybersecurity.',
                     style: TextStyle(
                       fontSize: 18,
                       height: 1.6,
                       color: Colors.grey.shade800,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        final anchor = html.AnchorElement(href: 'https://www.linkedin.com/posts/itrust-sutd-056208134_in-collaboration-with-innovation-norway-activity-7387499529765347330-vVm7/')
+                          ..setAttribute('target', '_blank')
+                          ..setAttribute('rel', 'noopener noreferrer');
+                        anchor.click();
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF2E7D8B),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            Icon(
+                              Icons.open_in_new,
+                              color: Colors.white,
+                              size: 18,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'View LinkedIn Post',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],

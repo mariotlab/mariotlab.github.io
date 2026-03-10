@@ -57,7 +57,7 @@ class NewsPage extends StatelessWidget {
               Colors.blue,
             ),
             
-            _buildBALTICFITItem(),
+           
             
             _buildNewsItem(
               'April 2025',
@@ -67,6 +67,7 @@ class NewsPage extends StatelessWidget {
               Colors.blue,
               true,
             ),
+            _buildBALTICFITItem(),
             
             _buildNewsItem(
               'Coming Soon',
@@ -829,7 +830,7 @@ class NewsPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        '2026',
+                        'January 2026',
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
